@@ -16,9 +16,10 @@ provider "azurerm"{
 }
 # Create a resource group
 resource "azurerm_resource_group" "tf_test"{
-    name = "tfmainrg"
+    name = "tf_rg_blobstore"
     location = "Canada Central"
-    
+    container = "tfstate"
+    key ="terraform.state"
 }
 
 resource "azurerm_container_group" "tfcg_test" {
